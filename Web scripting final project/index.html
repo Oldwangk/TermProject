@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-row">
+    <a class="brand" href="index.html">Likai Wang</a>
+    <!--menu -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+    <!-- What is inside for the header -->
+    <nav id="site-nav" class="nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+  <main>
+    <!-- plugin for flickity -->
+    <section class="hero">
+    <div class="carousel">
+        <div class="carousel-cell"><img src="images/bradley-andrews-8ZFqJRaHiq8-unsplash.jpg" alt="My photo 1"></div>
+        <div class="carousel-cell"><img src="images/michiel-annaert-wKdWb9j2BIg-unsplash.jpg" alt="My photo 2"></div>
+        <div class="carousel-cell"><img src="images/spencer-plouzek-7vyTATsnkrk-unsplash.jpg" alt="My photo 3"></div>
+        <div class="carousel-cell"> <img src="images/krisjanis-kazaks-Leh7iPE0bKY-unsplash.jpg" alt="My photo 4"></div>
+    </div>
+    </section>
+     <!-- Games I Like Section  -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Games I Play</h2>
+        <!-- Card 1 -->
+        <!-- Add the AOS attributes on each article -->
+        <div class="cards">
+          <article class="card--vertical" data-aos="fade-up" data-aos-delay="0">
+            <img class="thumb" src="images/game/lg.webp" alt="League of Legends">
+            <h3>League of Legends</h3>
+            <p>5v5 MOBA with strategy and teamwork.</p>
+          </article>
+          <!-- Card 2 -->
+          <article class="card--vertical" data-aos="fade-up" data-aos-delay="80">
+            <img class="thumb" src="images/game/hs.jpg" alt="Hearthstone">
+            <h3>Hearthstone</h3>
+            <p>Deckbuilding mind games every turn.</p>
+          </article>
+          <!-- Card 3 -->
+          <article class="card--vertical" data-aos="fade-up" data-aos-delay="160">
+            <img class="thumb" src="images/game/mh.jpg" alt="Monster Hunter">
+            <h3>Monster Hunter</h3>
+            <p>Hunt giants and master your weapon.</p>
+          </article>
+          <!-- Card 4 -->
+          <article class="card--vertical" data-aos="fade-up" data-aos-delay="240">
+            <img class="thumb" src="images/game/slay.avif" alt="Slay the Spire">
+            <h3>Slay the Spire</h3>
+            <p>Roguelike deckbuilder with wild synergies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+     <!--Favorite Food Section  -->
+    <section class="section alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="zoom-in">Favorite Food</h2>
+        <div class="cards">
+            <!-- Card 1 -->
+          <article class="card--vertical" data-aos="zoom-in" data-aos-delay="0">
+            <img class="thumb" src="images/food/hotpot.jpg" alt="Hot Pot">
+            <h3>Hot Pot</h3>
+            <p>Comfort food and best for gatherings.</p>
+          </article>
+          <!-- Card 2 -->
+          <article class="card--vertical" data-aos="flip-left" data-aos-delay="80">
+            <img class="thumb" src="images/food/liangpi.jpg" alt="Liangpi">
+            <h3>Liangpi</h3>
+            <p>Cold chewy noodles with a spicy kick.</p>
+          </article>
+          <!-- Card 3 -->
+          <article class="card--vertical" data-aos="fade-down" data-aos-delay="160">
+            <img class="thumb" src="images/food/dumplings.webp" alt="Dumplings">
+            <h3>Dumplings</h3>
+            <p>Juicy bites that never fail.</p>
+          </article>
+          <!-- Card 4 -->
+          <article class="card--vertical" data-aos="fade-up" data-aos-delay="240">
+            <img class="thumb" src="images/food/zhajiangmian.jpg" alt="Zha Jiang Mian">
+            <h3>Zha Jiang Mian</h3>
+            <p>Chinese traditional food.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>©  Likai Wang</div>
+  </footer>
+<script>
+    // Initialize AOS 
+  AOS.init({
+    once: true, // animation only once
+    duration: 600, //time used
+    easing: 'ease-out' // easing function
+  });
+var elem = document.querySelector('.carousel');
+        var flkty = new Flickity(elem, {
+        cellAlign: 'center', // aligin in The center
+        contain: true,
+        autoPlay: 1500,    //autoplay every 1500ms
+        pageDots: true,    //show the dots
+        prevNextButtons: false // no arrows
+        });
+  </script>
+</body>
+</html>

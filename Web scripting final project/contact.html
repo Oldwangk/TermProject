@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <style>
+    /* ===== Contact Form ===== */
+    .contact-wrap { padding-top: 32px; }
+    .contact-title {
+      margin: 0 0 20px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 500px;
+    }
+    #contact-form input,
+    #contact-form textarea {
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-row container">
+      <a class="brand" href="index.html">Likai Wang</a>
+      <label for="nav-toggle" class="nav-toggle-label">☰</label>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== Main Section ===== -->
+  <section class="section">
+    <div class="container contact-wrap">
+      <h1 class="contact-title">Contact Me</h1>
+      <p>If you want to contact me fill out the form</p>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </section>
+  <!-- ===== Scripts ===== -->
+<script>
+$(document).ready(function() {
+  $("#contact-form").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      message: {
+        required: true,
+        minlength: 10
+      }
+    },
+    messages: {
+      name: {
+        required: "Please enter your name",
+        minlength: "Your name must be at least 2 characters"
+      },
+      email: {
+        required: "Please enter your email",
+        email: "Please enter a valid email address"
+      },
+      message: {
+        required: "Please enter a message",
+        minlength: "Your message must be at least 10 characters"
+      }
+    },
+    submitHandler: function(form) {
+      alert("Form submitted successfully!");
+      form.reset();
+    }
+  });
+});
+</script>
+</body>
+</html>

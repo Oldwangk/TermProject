@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <style>
+    .gallery-wrap { padding-top: 32px; }
+    .gallery-title { 
+      margin: 0 0 20px; 
+      font-size: 28px; 
+      font-weight: 700; 
+      color: #fff; 
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 16px;
+    }
+    .gallery-grid a {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .25s ease;
+      display: block;
+    }
+    .gallery-grid a:hover img {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-row container">
+      <a class="brand" href="index.html">Likai Wang</a>
+      <label for="nav-toggle" class="nav-toggle-label">☰</label>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- use the lightbox plugin to put image-->
+  <section class="section">
+    <div class="container gallery-wrap">
+      <h1 class="gallery-title">My Gallery</h1>
+      <div class="gallery-grid">
+        <a href="images/1.jpg" data-lightbox="mygallery" data-title="Photo 1"><img src="images/1.jpg" alt="Photo 1"></a>
+        <a href="images/2.jpg" data-lightbox="mygallery" data-title="Photo 2"><img src="images/2.jpg" alt="Photo 2"></a>
+        <a href="images/3.jpg" data-lightbox="mygallery" data-title="Photo 3"> <img src="images/3.jpg" alt="Photo 3"></a>
+        <a href="images/4.jpg" data-lightbox="mygallery" data-title="Photo 4"><img src="images/4.jpg" alt="Photo 4"></a>
+        <a href="images/5.jpg" data-lightbox="mygallery" data-title="Photo 5"> <img src="images/5.jpg" alt="Photo 1"></a>
+        <a href="images/6.jpg" data-lightbox="mygallery" data-title="Photo 6"> <img src="images/6.jpg" alt="Photo 1"></a>
+        <a href="images/7.jpg" data-lightbox="mygallery" data-title="Photo 7"> <img src="images/7.jpg" alt="Photo 1"></a>
+        <a href="images/8.jpg" data-lightbox="mygallery" data-title="Photo 8"><img src="images/8.jpg" alt="Photo 1"></a></div>
+    </div>
+  </section>
+    <!-- a footer -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Likai Wang</div>
+  </footer>
+    <!-- Seeting for lightbox -->
+  <script>
+      lightbox.option({
+        'resizeDuration': 200,     // Animation speed when changing image size
+        'wrapAround': true,        // Allow continuous navigation (loop from last to first)
+        'fadeDuration': 200,       //  Duration of the fade transition
+        'imageFadeDuration': 200,  // Duration of the image fade in
+        'positionFromTop': 60,     // Distance from the top of the viewport 
+        'showImageNumberLabel': true, // "Image 1 of 4" show the image number 
+        'disableScrolling': true   //  When the picture open background not scrolling
+})
+  </script>
+</body>
+</html>
